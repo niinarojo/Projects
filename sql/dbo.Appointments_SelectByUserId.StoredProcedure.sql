@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			  Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		08/15/2023
 -- Description:		Select By UserId proc for dbo.Appointments
 -- Code Reviewer:	Erik Quesada
@@ -45,16 +45,16 @@ as
 BEGIN
 
 Declare @offset int = @PageIndex * @PageSize
-SELECT a.[Id] as AppointmentId
-      ,a.[AppointmentTypeId]
+SELECT 	  a.[Id] as AppointmentId
+          ,a.[AppointmentTypeId]
   	  ,act.[Name]
   	  ,a.[ClientId]
   	  ,c.[FirstName] as ClientFirstName
   	  ,c.[LastName] as ClientLastName
   	  ,c.[Phone] as ClientPhone
   	  ,c.[Email] as ClientEmail
-      ,a.[Notes]
-      ,a.[LocationId]
+          ,a.[Notes]
+          ,a.[LocationId]
   	  ,lt.[Id] as LocationTypeId
   	  ,lt.[Name] as LocationType
   	  ,l.[LineOne]
@@ -66,27 +66,27 @@ SELECT a.[Id] as AppointmentId
   	  ,s.[Code] as StateCode
   	  ,l.[Latitude]
   	  ,l.[Longitude]
-      ,a.[IsConfirmed]
-      ,a.[AppointmentStart]
-      ,a.[AppointmentEnd]
-      ,a.[DateCreated]
-      ,a.[DateModified]
-      ,u.[Id] as UsersId
+          ,a.[IsConfirmed]
+          ,a.[AppointmentStart]
+          ,a.[AppointmentEnd]
+          ,a.[DateCreated]
+          ,a.[DateModified]
+          ,u.[Id] as UsersId
   	  ,u.[FirstName] as UserFirstName
   	  ,u.[LastName] as UserLastName
   	  ,u.[Mi] as UserMi
   	  ,u.[AvatarUrl] as UserAvatar
-      ,a.[ModifiedBy]
-	    ,TotalCount = COUNT(1) OVER() 
-  FROM [dbo].[Appointments] as a
+          ,a.[ModifiedBy]
+	  ,TotalCount = COUNT(1) OVER() 
+ FROM [dbo].[Appointments] as a
   	inner join [dbo].[AppointmentTypes] as act on act.Id = a.AppointmentTypeId
   	inner join [dbo].[Clients] as c on c.Id = a.ClientId
   	left join [dbo].[Locations] as l on l.Id = a.LocationId
   	left join [dbo].[LocationTypes] as lt on lt.Id = l.LocationTypeId
   	left join [dbo].[States] as s on s.Id = l.StateId
   	left join [dbo].[Users] as u on a.CreatedBy = u.Id
-	WHERE u.Id = @UserId AND a.StatusId = 1
-	ORDER BY u.Id
+WHERE u.Id = @UserId AND a.StatusId = 1
+ORDER BY u.Id
 
 	OFFSET @offSet Rows
     Fetch Next @PageSize Rows ONLY
