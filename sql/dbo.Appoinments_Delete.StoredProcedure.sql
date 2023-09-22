@@ -6,10 +6,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		07/29/2023
 -- Description:		delete proc for dbo.Appointments that updates the status to 5
--- Code Reviewer:	Oscar Silva
+-- Code Reviewer:	Oscar
 
 -- MODIFIED BY: 
 -- MODIFIED DATE:
