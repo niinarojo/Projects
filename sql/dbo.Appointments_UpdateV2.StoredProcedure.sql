@@ -1,12 +1,12 @@
 USE [YellowBrick]
 GO
-/****** Object:  StoredProcedure [dbo].[Appointments_UpdateV3]    Script Date: 9/22/2023 11:29:11 AM ******/
+/****** Object:  StoredProcedure [dbo].[Appointments_UpdateV2]    Script Date: 9/22/2023 11:29:11 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		08/21/2023
 -- Description:		Update proc for dbo.Appointments
 -- Code Reviewer:	Joseph Rodrigues
