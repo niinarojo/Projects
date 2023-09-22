@@ -9,7 +9,7 @@ GO
 -- Author:		Niina Rojo
 -- Create date:		08/21/2023
 -- Description:		Update proc for dbo.Appointments
--- Code Reviewer:	Joseph Rodrigues
+-- Code Reviewer:	Joseph
 
 -- MODIFIED BY: 
 -- MODIFIED DATE:
@@ -18,23 +18,23 @@ GO
 
 -- =============================================
 ALTER PROC [dbo].[Appointments_UpdateV2]
-      			@AppointmentTypeId int
-      		 ,@ClientId int
+      	   @AppointmentTypeId int
+      	   ,@ClientId int
            ,@Notes nvarchar(2000) = NULL
            ,@LocationId int
-		       ,@IsConfirmed bit
+	   ,@IsConfirmed bit
            ,@AppointmentStart datetime2(7)
            ,@AppointmentEnd datetime2(7)
            ,@UserId int
-		       ,@LocationTypeId int  
+	   ,@LocationTypeId int  
            ,@LineOne nvarchar(255)
            ,@LineTwo nvarchar(255) = NULL
            ,@City nvarchar(255)
            ,@Zip nvarchar(50)
            ,@StateId int
            ,@Latitude float
-    		   ,@Longitude float
-    		   ,@Id int
+    	   ,@Longitude float
+    	   ,@Id int
 
 as
 
@@ -43,42 +43,42 @@ as
 Declare		@Id int = 39
 
 Declare		@AppointmentTypeId int = 1
-			     ,@ClientId int = 409
-           ,@Notes nvarchar(2000) = 'Test notes'
-           ,@LocationId int = 2
-		       ,@IsConfirmed bit = 1
-           ,@AppointmentStart datetime2(7) = '2023-08-23 08:30:20'
-           ,@AppointmentEnd datetime2(7) = '2023-08-23 09:30:20'
-           ,@UserId int = 130
-		       ,@LocationTypeId int  = 1
-           ,@LineOne nvarchar(255) = '123 Pretty Street'
-           ,@LineTwo nvarchar(255)=NULL
-           ,@City nvarchar(255) = 'Scottsdale'
-           ,@Zip nvarchar(50) = '13456'
-           ,@StateId int = 2
-           ,@Latitude float = 12
-		       ,@Longitude float = 12
+		,@ClientId int = 409
+                ,@Notes nvarchar(2000) = 'Test notes'
+           	,@LocationId int = 2
+		,@IsConfirmed bit = 1
+	        ,@AppointmentStart datetime2(7) = '2023-08-23 08:30:20'
+	        ,@AppointmentEnd datetime2(7) = '2023-08-23 09:30:20'
+	        ,@UserId int = 130
+		,@LocationTypeId int  = 1
+	        ,@LineOne nvarchar(255) = '123 Pretty Street'
+	        ,@LineTwo nvarchar(255)=NULL
+	        ,@City nvarchar(255) = 'Scottsdale'
+	        ,@Zip nvarchar(50) = '13456'
+	        ,@StateId int = 2
+	        ,@Latitude float = 12
+		,@Longitude float = 12
 
 
 		  
 Execute [dbo].[Appointments_UpdateV2]
-		        @AppointmentTypeId
-			     ,@ClientId
-           ,@Notes
-           ,@LocationId
-		       ,@IsConfirmed
-           ,@AppointmentStart
-           ,@AppointmentEnd
-           ,@UserId 
-    		  ,@LocationTypeId 
-    			,@LineOne 
-    			,@LineTwo 
-    			,@City 
-    			,@Zip 
-    			,@StateId 
-    			,@Latitude 
-    			,@Longitude
-    			,@Id
+		 @AppointmentTypeId
+		,@ClientId
+           	,@Notes
+           	,@LocationId
+		,@IsConfirmed
+           	,@AppointmentStart
+           	,@AppointmentEnd
+           	,@UserId 
+    		,@LocationTypeId 
+    		,@LineOne 
+    		,@LineTwo 
+		,@City 
+		,@Zip 
+		,@StateId 
+		,@Latitude 
+		,@Longitude
+		,@Id
 
 
 */
