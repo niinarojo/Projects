@@ -1,5 +1,5 @@
-using Sabio.Models.Domain;
-using Sabio.Models.Requests.Locations;
+using Yellowbrick.Models.Domain;
+using Yellowbrick.Models.Requests.Locations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sabio.Models.Requests.Appointments
+namespace Yellowbrick.Models.Requests.Appointments
 {
     public class AppointmentAddRequest
     {
