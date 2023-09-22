@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		07/28/2023
 -- Description:		Insert proc for dbo.Appointments
 -- Code Reviewer:	Joseph Rodriguez
@@ -19,8 +19,8 @@ GO
 -- =============================================
 
 ALTER PROC [dbo].[Appointments_Insert]
-			     @AppointmentTypeId int
-			    ,@ClientId int
+	   @AppointmentTypeId int
+	  ,@ClientId int
           ,@Notes nvarchar(2000) = NULL
           ,@LocationId int = NULL
           ,@AppointmentStart datetime2(7)
@@ -35,22 +35,22 @@ AS
 Declare		@Id int = 0
 
 Declare		@AppointmentTypeId int = 2
-			     ,@ClientId int = 288
-           ,@Notes nvarchar(2000) = 'NOTES'
-           ,@LocationId int = null
-           ,@AppointmentStart datetime2(7) = '2023-08-21 11:30:20'
-           ,@AppointmentEnd datetime2(7) = '2023-08-21 12:30:00'
-           ,@UserId int = 130
+		,@ClientId int = 288
+	        ,@Notes nvarchar(2000) = 'NOTES'
+	        ,@LocationId int = null
+	        ,@AppointmentStart datetime2(7) = '2023-08-21 11:30:20'
+	        ,@AppointmentEnd datetime2(7) = '2023-08-21 12:30:00'
+	        ,@UserId int = 130
 
 Execute [dbo].[Appointments_Insert]
-		      	@AppointmentTypeId
-			      ,@ClientId
-           ,@Notes
-           ,@LocationId
-           ,@AppointmentStart
-           ,@AppointmentEnd
-           ,@UserId
-		       ,@Id OUTPUT
+		@AppointmentTypeId
+		,@ClientId
+	        ,@Notes
+	        ,@LocationId
+	        ,@AppointmentStart
+	        ,@AppointmentEnd
+	        ,@UserId
+		,@Id OUTPUT
 
 */
 
@@ -68,13 +68,13 @@ INSERT INTO [dbo].[Appointments]
            ,[ModifiedBy])
      VALUES
            (@AppointmentTypeId
-			      ,@ClientId
+	    ,@ClientId
             ,@Notes
             ,@LocationId
             ,@AppointmentStart
             ,@AppointmentEnd
             ,@UserId
-		       ,@UserId)
+	    ,@UserId)
 	SET @Id = SCOPE_IDENTITY()
 
 END
