@@ -7,7 +7,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Author:			Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		07/28/2023
 -- Description:		Select all data from dbo.AppointmentTypes
 -- Code Reviewer:	Joseph
