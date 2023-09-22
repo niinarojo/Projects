@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		08/14/2023
 -- Description:		Select By Id proc for dbo.Appointments
 -- Code Reviewer:	
@@ -37,16 +37,16 @@ as
 BEGIN
 
 
-SELECT a.[Id]
-      ,a.[AppointmentTypeId]
+SELECT     a.[Id]
+          ,a.[AppointmentTypeId]
   	  ,act.[Name]
   	  ,a.[ClientId]
   	  ,c.[FirstName] as ClientFirstName
   	  ,c.[LastName] as ClientLastName
   	  ,c.[Phone] as ClientPhone
   	  ,c.[Email] as ClientEmail
-      ,a.[Notes]
-      ,a.[LocationId]
+          ,a.[Notes]
+          ,a.[LocationId]
   	  ,lt.[Id] as LocationTypeId
   	  ,lt.[Name] as LocationType
   	  ,l.[LineOne]
@@ -58,27 +58,27 @@ SELECT a.[Id]
   	  ,s.[Code] as StateCode
   	  ,l.[Latitude]
   	  ,l.[Longitude]
-      ,a.[IsConfirmed]
-      ,a.[AppointmentStart]
-      ,a.[AppointmentEnd]
-      ,a.[DateCreated]
-      ,a.[DateModified]
-      ,u.[Id] as UsersId
+          ,a.[IsConfirmed]
+          ,a.[AppointmentStart]
+          ,a.[AppointmentEnd]
+          ,a.[DateCreated]
+          ,a.[DateModified]
+          ,u.[Id] as UsersId
   	  ,u.[FirstName] as UserFirstName
   	  ,u.[LastName] as UserLastName
   	  ,u.[Mi] as UserMi
   	  ,u.[AvatarUrl] as UserAvatar
-      ,a.[ModifiedBy]
+          ,a.[ModifiedBy]
 
-  FROM [dbo].[Appointments] as a
-    inner join [dbo].[AppointmentTypes] as act on act.Id = a.AppointmentTypeId
+FROM [dbo].[Appointments] as a
+        inner join [dbo].[AppointmentTypes] as act on act.Id = a.AppointmentTypeId
   	inner join [dbo].[Clients] as c on c.Id = a.ClientId
   	left join [dbo].[Locations] as l on l.Id = a.LocationId
   	left join [dbo].[LocationTypes] as lt on lt.Id = l.LocationTypeId
   	left join [dbo].[States] as s on s.Id = l.StateId
   	left join [dbo].[Users] as u on a.CreatedBy = u.Id
-	WHERE a.Id = @Id AND a.StatusId = 1
-	ORDER BY a.Id
+WHERE a.Id = @Id AND a.StatusId = 1
+ORDER BY a.Id
 
 
 
