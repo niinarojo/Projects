@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			  Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		08/22/2023
 -- Description:		Update proc to update dbo.Appointments and insert into Locations
 -- Code Reviewer:	Joseph
@@ -18,23 +18,23 @@ GO
 
 -- =============================================
 ALTER PROC [dbo].[Appointments_UpdateV3]
-      			@AppointmentTypeId int
-      		 ,@ClientId int
+	   @AppointmentTypeId int
+	   ,@ClientId int
            ,@Notes nvarchar(2000) = NULL
            ,@LocationId int
-		       ,@IsConfirmed bit
+	   ,@IsConfirmed bit
            ,@AppointmentStart datetime2(7)
            ,@AppointmentEnd datetime2(7)
            ,@UserId int
-    		   ,@Id int
-    		   ,@LocationTypeId int  
+    	   ,@Id int
+    	   ,@LocationTypeId int  
            ,@LineOne nvarchar(255)
            ,@LineTwo nvarchar(255) = NULL
            ,@City nvarchar(255)
            ,@Zip nvarchar(50)
            ,@StateId int
            ,@Latitude float
-		       ,@Longitude float
+	   ,@Longitude float
 
 
 
@@ -44,44 +44,44 @@ as
 
 Declare		@Id int = 3
 
-Declare		@AppointmentTypeId int = 1
-			     ,@ClientId int = 284
+Declare	   @AppointmentTypeId int = 1
+	   ,@ClientId int = 284
            ,@Notes nvarchar(2000) = 'UpdateInsert'
            ,@LocationId int = 3
-		       ,@IsConfirmed bit = 1
+	   ,@IsConfirmed bit = 1
            ,@AppointmentStart datetime2(7) = '2023-08-01 08:30:20'
            ,@AppointmentEnd datetime2(7) = '2023-08-01 09:30:20'
            ,@UserId int = 130
 
-		       ,@LocationTypeId int  = 1
+	   ,@LocationTypeId int  = 1
            ,@LineOne nvarchar(255) = '123 Elm Street'
            ,@LineTwo nvarchar(255)=NULL
            ,@City nvarchar(255) = 'Chicago'
            ,@Zip nvarchar(50) = '13456'
            ,@StateId int = 2
            ,@Latitude float = 12
-		       ,@Longitude float = 12
+	   ,@Longitude float = 12
 
 
 		  
 Execute [dbo].[Appointments_UpdateV3]
-        		@AppointmentTypeId
-        	 ,@ClientId
+           @AppointmentTypeId
+           ,@ClientId
            ,@Notes
            ,@LocationId
-		       ,@IsConfirmed
+	   ,@IsConfirmed
            ,@AppointmentStart
            ,@AppointmentEnd
            ,@UserId 
-    		   ,@Id
-    		   ,@LocationTypeId 
-      		 ,@LineOne 
-      		 ,@LineTwo 
-      		 ,@City 
-      		 ,@Zip 
-      		 ,@StateId 
-      		 ,@Latitude 
-      		 ,@Longitude 
+	   ,@Id
+	   ,@LocationTypeId 
+	   ,@LineOne 
+	   ,@LineTwo 
+	   ,@City 
+	   ,@Zip 
+	   ,@StateId 
+	   ,@Latitude 
+	   ,@Longitude 
 
 
 
