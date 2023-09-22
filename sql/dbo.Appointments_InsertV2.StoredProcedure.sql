@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:			  Niina Rojo
+-- Author:		Niina Rojo
 -- Create date:		08/16/2023
 -- Description:		Insert proc to insert into dbo.Appointments and dbo.locations
 -- Code Reviewer:	Erik
@@ -19,21 +19,21 @@ GO
 -- =============================================
 
 ALTER PROC [dbo].[Appointments_InsertV2]
-			      @AppointmentTypeId int
-			     ,@ClientId int
+	    @AppointmentTypeId int
+	   ,@ClientId int
            ,@Notes nvarchar(2000) = NULL
            ,@AppointmentStart datetime2(7)
            ,@AppointmentEnd datetime2(7)
            ,@UserId int		   
-			     ,@LocationTypeId int  
+	   ,@LocationTypeId int  
            ,@LineOne nvarchar(255)
            ,@LineTwo nvarchar(255)=NULL
            ,@City nvarchar(255)
            ,@Zip nvarchar(50)
            ,@StateId int
            ,@Latitude float
-		       ,@Longitude float
-		       ,@Id int OUTPUT
+	   ,@Longitude float
+	   ,@Id int OUTPUT
 
            
 AS
@@ -43,37 +43,37 @@ AS
 Declare		@Id int = 0
 
 
-Declare		  @AppointmentTypeId int = 1
-			     ,@ClientId int = 285
-           ,@Notes nvarchar(2000) = 'New notes again'
-           ,@AppointmentStart datetime2(7) = '2023-08-21 12:30:20'
-           ,@AppointmentEnd datetime2(7) = '2023-08-21 13:30:00'
-           ,@UserId int = 130
-		       ,@LocationTypeId int = 1
-           ,@LineOne nvarchar(255) = 'Test address'
-           ,@LineTwo nvarchar(255) = 'TEST2'
-           ,@City nvarchar(255) = 'TEST2'
-           ,@Zip nvarchar(50) = '1245'
-           ,@StateId int = 1
-           ,@Latitude float = 11
-		       ,@Longitude float = 11
+Declare		@AppointmentTypeId int = 1
+		,@ClientId int = 285
+	        ,@Notes nvarchar(2000) = 'New notes again'
+	        ,@AppointmentStart datetime2(7) = '2023-08-21 12:30:20'
+	        ,@AppointmentEnd datetime2(7) = '2023-08-21 13:30:00'
+	        ,@UserId int = 130
+		,@LocationTypeId int = 1
+	        ,@LineOne nvarchar(255) = 'Test address'
+	        ,@LineTwo nvarchar(255) = 'TEST2'
+	        ,@City nvarchar(255) = 'TEST2'
+	        ,@Zip nvarchar(50) = '1245'
+	        ,@StateId int = 1
+	        ,@Latitude float = 11
+		,@Longitude float = 11
 
 Execute [dbo].[Appointments_InsertV2]
-			      @AppointmentTypeId
-			     ,@ClientId
-           ,@Notes
-           ,@AppointmentStart
-           ,@AppointmentEnd
-           ,@UserId
-    		   ,@LocationTypeId
-    			 ,@LineOne
-    			 ,@LineTwo
-    			 ,@City
-    			 ,@Zip
-    			 ,@StateId
-    			 ,@Latitude 
-    			 ,@Longitude
-    			 ,@Id OUTPUT
+		 @AppointmentTypeId
+		,@ClientId
+	        ,@Notes
+	        ,@AppointmentStart
+	        ,@AppointmentEnd
+	        ,@UserId
+    		,@LocationTypeId
+    		,@LineOne
+		 ,@LineTwo
+		 ,@City
+		 ,@Zip
+		 ,@StateId
+		 ,@Latitude 
+		 ,@Longitude
+		 ,@Id OUTPUT
 
 
 */
@@ -101,12 +101,12 @@ BEGIN TRY
 	EXECUTE dbo.Appointments_Insert
 			@AppointmentTypeId
 			,@ClientId
-           ,@Notes
-           ,@LocationsTableId
-           ,@AppointmentStart
-           ,@AppointmentEnd
-           ,@UserId
-		   ,@Id OUTPUT
+		        ,@Notes
+		        ,@LocationsTableId
+		        ,@AppointmentStart
+		        ,@AppointmentEnd
+		        ,@UserId
+		   	,@Id OUTPUT
 
 		
 		
